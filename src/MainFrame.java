@@ -1,30 +1,37 @@
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.*;
 
 import javax.swing.*;
 
 public class MainFrame extends JFrame{
-    int count = 0;
 
+    Image YTB;
+    Image LSJ;
+    Image PJH;
     MainFrame(){
+        JFrame frame = new JFrame();
 
-        // TextField
-        JTextField tf1 = new JTextField(" Blank");
-        tf1.setBounds(250, 150, 150, 30);
-
-        // Button b1
+        // 선택하기 Button 생성
         JButton YTBbutton = new JButton("선택하기");
         JButton LSJbutton = new JButton("선택하기");
         JButton PJHbutton = new JButton("선택하기");
-        YTBbutton.setBounds(300, 800, 100, 30);
-        LSJbutton.setBounds(800, 800, 100, 30);
-        PJHbutton.setBounds(1400, 800, 100, 30);
-
-
         add(YTBbutton);
         add(LSJbutton);
         add(PJHbutton);
+
+        // Button 좌표
+        YTBbutton.setBounds(200, 800, 100, 30);
+        LSJbutton.setBounds(750, 800, 100, 30);
+        PJHbutton.setBounds(1330, 800, 100, 30);
+
+
+        // 이미지 생성
+        Container c = getContentPane();
+        Toolkit toolkit = frame.getToolkit();
+        this.YTB = toolkit.getImage("img/YTB.png");
+        this.LSJ = toolkit.getImage("img/LSJ.png");
+        this.PJH = toolkit.getImage("img/PJH.png");
+
 
         setTitle("똥 피하기");
         setSize(1800,1100);
@@ -32,6 +39,12 @@ public class MainFrame extends JFrame{
         setLayout(null);
         setVisible(true);
     }
+    public void paint(Graphics g){
+        g.drawImage(YTB,80,110,this);
+        g.drawImage(LSJ,570,95,this);
+        g.drawImage(PJH,1100,170,this);
+    }
+
 }
 
 
