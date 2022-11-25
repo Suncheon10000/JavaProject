@@ -14,7 +14,7 @@ public class MainFrame extends JFrame{
         JFrame frame = new JFrame();
         JPanel imgPanel = new JPanel();
         JPanel StartPanel = new JPanel();
-        JLabel title = new JLabel("금쪽이 피하기");
+        JLabel title = new JLabel();
         
         // 게임타이틀 좌표
         title.setSize(80,30);
@@ -45,7 +45,7 @@ public class MainFrame extends JFrame{
             }
         });
 
-        setTitle("똥 피하기");
+        setTitle("금쪽이 피하기");
         setSize(1600,900);
         setLocationRelativeTo(null);
         setLayout(null);
