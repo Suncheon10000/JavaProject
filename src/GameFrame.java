@@ -3,14 +3,14 @@ import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class LSJgame extends JFrame {
+public class GameFrame extends JFrame {
     private JLabel backgroundMap;
     private Player player;
-    LSJgame(){
+    GameFrame(){
         super("똥 피하기"); //타이틀
         JPanel jPanel = new JPanel();
 
-        jPanel.setBackground(Color.RED);
+        jPanel.setBackground(Color.GREEN);
 
         add(jPanel);
         Dimension frameSize = getSize();

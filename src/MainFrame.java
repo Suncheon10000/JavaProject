@@ -13,17 +13,11 @@ public class MainFrame extends JFrame{
         JFrame frame = new JFrame();
 
         // 선택하기 Button 생성
-        JButton YTBbutton = new JButton("선택하기");
-        JButton LSJbutton = new JButton("선택하기");
-        JButton PJHbutton = new JButton("선택하기");
-        add(YTBbutton);
-        add(LSJbutton);
-        add(PJHbutton);
+        JButton StartBtn = new JButton("선택하기");
+        add(StartBtn);
 
         // Button 좌표
-        YTBbutton.setBounds(170, 770, 100, 30);
-        LSJbutton.setBounds(660, 770, 100, 30);
-        PJHbutton.setBounds(1200, 770, 100, 30);
+        StartBtn.setBounds(660, 770, 100, 30);
 
 
         // 이미지 생성
@@ -33,27 +27,14 @@ public class MainFrame extends JFrame{
         this.LSJ = toolkit.getImage("img/LSJ.png");
         this.PJH = toolkit.getImage("img/PJH.png");
 
-        YTBbutton.addActionListener(new ActionListener() {
+        StartBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new YTBgame();
+                new GameFrame();
                 setVisible(false); // 창 안보이게 하기
             }
         });
-        LSJbutton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new LSJgame();
-                setVisible(false); // 창 안보이게 하기
-            }
-        });
-        PJHbutton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new PJHgame();
-                setVisible(false); // 창 안보이게 하기
-            }
-        });
+
 
 
         setTitle("똥 피하기");
