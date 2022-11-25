@@ -3,12 +3,11 @@ import javax.swing.JLabel;
 
 public class Player extends JLabel{
 
-    private int x=500;
-    private int y=535;
+    private int x=800;
+    private int y=850;
+
     private boolean left;
     private boolean right;
-    private boolean up;
-    private boolean down;
 
     private ImageIcon character;
 
@@ -25,8 +24,8 @@ public class Player extends JLabel{
     private void initSetting() {
 
         setIcon(character);
-        setSize(50, 50);
-        setLocation(500,535);
+        setSize(110, 110);
+        setLocation(x,y);
     }
     public void left() {
         System.out.println("left");

@@ -21,9 +21,9 @@ public class MainFrame extends JFrame{
         add(PJHbutton);
 
         // Button 좌표
-        YTBbutton.setBounds(200, 800, 100, 30);
-        LSJbutton.setBounds(750, 800, 100, 30);
-        PJHbutton.setBounds(1330, 800, 100, 30);
+        YTBbutton.setBounds(180, 800, 100, 30);
+        LSJbutton.setBounds(700, 800, 100, 30);
+        PJHbutton.setBounds(1300, 800, 100, 30);
 
 
         // 이미지 생성
@@ -57,15 +57,15 @@ public class MainFrame extends JFrame{
 
 
         setTitle("똥 피하기");
-        setSize(1800,1100);
+        setSize(1700,1000);
         setLocationRelativeTo(null);
         setLayout(null);
         setVisible(true);
     }
     public void paint(Graphics g){
-        g.drawImage(YTB,80,110,this);
-        g.drawImage(LSJ,570,95,this);
-        g.drawImage(PJH,1100,170,this);
+        g.drawImage(YTB,65,110,this);
+        g.drawImage(LSJ,530,95,this);
+        g.drawImage(PJH,1080,170,this);
     }
 
 }
