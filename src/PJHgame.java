@@ -31,7 +31,7 @@ public class PJHgame extends JFrame {
         add(player);
     }
     private void initSetting() {
-        setSize(1700, 1000);
+        setSize(1600,900);
         setLayout(null);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

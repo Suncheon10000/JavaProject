@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 public class Player extends JLabel{
 
     private int x=800;
-    private int y=850;
+    private int y=750;
 
     private boolean left;
     private boolean right;
