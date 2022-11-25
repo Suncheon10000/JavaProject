@@ -13,7 +13,7 @@ public class MainFrame extends JFrame{
         JFrame frame = new JFrame();
 
         // 선택하기 Button 생성
-        JButton StartBtn = new JButton("선택하기");
+        JButton StartBtn = new JButton("시작하기");
         add(StartBtn);
 
         // Button 좌표
