@@ -12,6 +12,11 @@ public class GameFrame extends JFrame{
     Thread p_display;
     JLabel w1, w2, w3;
     int mm, ss, ms, t=0;
+
+    private ImageIcon inGameYTB;
+    private ImageIcon inGameLSJ;
+    private ImageIcon inGamePJH;
+
     private JLabel backgroundMap;
     private Player player;
 
@@ -29,9 +34,14 @@ public class GameFrame extends JFrame{
         setLocationRelativeTo(null);
         setLayout(null);
         setVisible(true);
+
+        // 함수 호출
         initObject();
         initSetting();
         initListener();
+        drop();
+
+
 
         // GameStart버튼을 누르면 자동으로 스톱워치 시작
         p_display = new Thread(new Runnable() {
@@ -105,6 +115,9 @@ public class GameFrame extends JFrame{
         //setContentPane(backgroundMap);
         player = new Player();
         add(player);
+        inGameYTB = new ImageIcon("img/inGameYTB.png");
+        inGameLSJ = new ImageIcon("img/inGameLSJ.png");
+        inGamePJH = new ImageIcon("img/inGamePJH.png");
         setVisible(true);
     }
 
@@ -113,6 +126,7 @@ public class GameFrame extends JFrame{
         setLayout(null);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
     }
 
@@ -132,6 +146,12 @@ public class GameFrame extends JFrame{
                 }
             }
         });
+    }
+
+
+    // 똥 떨이지는 코드
+    private void drop(){
+
     }
 
 }

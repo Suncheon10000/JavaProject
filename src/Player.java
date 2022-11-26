@@ -1,6 +1,8 @@
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import static javax.swing.text.StyleConstants.setIcon;
+
 public class Player extends JLabel{
 
     private int x=720;
