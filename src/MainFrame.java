@@ -1,33 +1,28 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.ImageObserver;
 
 import javax.swing.*;
 
-public class MainFrame extends JFrame{
+public class MainFrame{
     Image YTB,LSJ,PJH;
-    
+
     // 생성자
     MainFrame(){
         JFrame frame = new JFrame();
-        JPanel imgPanel = new JPanel();
-        JPanel StartPanel = new JPanel();
-        JLabel title = new JLabel();
-        
+        JLabel title = new JLabel("금쪽이 피하기");  // 게임 타이틀 생성
+        JButton StartBtn = new JButton("GameStart");  // GameStart 버튼 생성
+
         // 게임타이틀 좌표
-        title.setSize(80,30);
-        title.setLocation(0,0);
-        add(title);
+        title.setLocation(500,300);
+        frame.add(title);
 
-
-        // 선택하기 Button 생성
-        JButton StartBtn = new JButton("GameStart");
-
+        
         // Button 좌표
         StartBtn.setBounds(1030, 700, 480, 90);
         StartBtn.setFont(new Font("Arial", Font.ITALIC, 80));
-
-        add(StartBtn);
+        frame.add(StartBtn);
 
         // 이미지 생성
         Toolkit toolkit = frame.getToolkit();
@@ -36,27 +31,26 @@ public class MainFrame extends JFrame{
         this.PJH = toolkit.getImage("img/PJH.png");
 
 
+
         StartBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new StopWatchEx();
+                new GameFrame();
             }
         });
 
-        setTitle("금쪽이 피하기");
-        setSize(1600,900);
-        setLocationRelativeTo(null);
-        setLayout(null);
-        setVisible(true);
+        frame.setTitle("금쪽이 피하기");
+        frame.setSize(1600,900);
+        frame.setLocationRelativeTo(null);
+        frame.setLayout(null);
+        frame.setVisible(true);
     }
-    
-    
+
+
     // 이미지 좌표
     public void paint(Graphics g){
-        g.drawImage(YTB,30,110,this);
-        g.drawImage(LSJ,470,80,this);
-        g.drawImage(PJH,970,130,this);
+        g.drawImage(YTB,30,110, (ImageObserver) this);
+        g.drawImage(LSJ,470,80, (ImageObserver) this);
+        g.drawImage(PJH,970,130, (ImageObserver) this);
     }
 }
-
-
