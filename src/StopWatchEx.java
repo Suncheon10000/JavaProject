@@ -3,11 +3,10 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class StopWatchEx extends JFrame{
 
@@ -15,6 +14,8 @@ public class StopWatchEx extends JFrame{
     Thread p_display;
     JLabel w1, w2, w3;
     int mm, ss, ms, t=0;
+    private JLabel backgroundMap;
+    private Player player;
 
     public StopWatchEx() {
         super("금쪽이 피하기");
@@ -30,7 +31,11 @@ public class StopWatchEx extends JFrame{
         setLocationRelativeTo(null);
         setLayout(null);
         setVisible(true);
+        initObject();
+        initSetting();
+        initListener();
 
+        // GameStart버튼을 누르면 자동으로 스톱워치 시작
         p_display = new Thread(new Runnable() {
 
             @Override
@@ -86,6 +91,7 @@ public class StopWatchEx extends JFrame{
 
 
 
+
         w1.setFont(new Font("courier",Font.BOLD,30));
         w2.setFont(new Font("courier",Font.BOLD,30));
         w3.setFont(new Font("courier",Font.BOLD,30));
@@ -96,4 +102,38 @@ public class StopWatchEx extends JFrame{
 
 
     }
+    private void initObject() {
+        //backgroundMap = new JLabel(new ImageIcon("img/img.png"));
+        //setContentPane(backgroundMap);
+        player = new Player();
+        add(player);
+        setVisible(true);
+    }
+
+    private void initSetting() {
+        setSize(1600,900);
+        setLayout(null);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+
+    private void initListener() {
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                System.out.println(e.getKeyCode());
+
+                switch (e.getKeyCode()) {
+                    case KeyEvent.VK_LEFT:
+                        player.left();
+                        break;
+                    case KeyEvent.VK_RIGHT:
+                        player.right();
+                        break;
+                }
+            }
+        });
+    }
+
 }
