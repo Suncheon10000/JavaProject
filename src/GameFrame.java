@@ -28,7 +28,6 @@ public class GameFrame extends JFrame {
         super("금쪽이 피하기"); // 게임 페이지 타이틀
 
         // 시간 GUI
-        buildGUI();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -38,8 +37,7 @@ public class GameFrame extends JFrame {
         initSetting();
         initListener();
     }
-    
-    // 배경화면
+     //배경화면
     private void initObject() {
         backgroundMap = new JLabel(new ImageIcon("image/backgroundMap.png"));
         setContentPane(backgroundMap);
@@ -54,6 +52,7 @@ public class GameFrame extends JFrame {
         setLayout(null);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 
     // 방향키 조절
@@ -75,78 +74,6 @@ public class GameFrame extends JFrame {
         });
     }
 
-    public void buildGUI() {
-
-        start.setFont(new Font("serif",Font.BOLD,25));
-
-        w1.setFont(new Font("courier",Font.BOLD,30));
-        w2.setFont(new Font("courier",Font.BOLD,30));
-        w3.setFont(new Font("courier",Font.BOLD,30));
-
-        c1.setFont(new Font("courier",Font.BOLD,30));
-        c2.setFont(new Font("courier",Font.BOLD,30));
-
-        bp.add(start);
-        wp.add(w1);
-        wp.add(c1);
-        wp.add(w2);
-        wp.add(c2);
-        wp.add(w3);
-
-        p.add(wp);
-        p.add(bp);
-
-        add(p);
-
-        new ButtonListener();
-        System.out.println("-------------------게임 시작-------------------");
-
-    }
-
-    public static class ButtonListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-
-            start.setEnabled(false);
-            p_display = new Thread(new Runnable() {
-
-                @Override
-                public void run() {
-
-                    mm = Integer.parseInt(w1.getText());
-                    ss = Integer.parseInt(w2.getText());
-                    ms = Integer.parseInt(w3.getText());
-
-
-                    while (p_display == Thread.currentThread()) {
-
-                        mm =  t % (1000*60) / 100 / 60 ;
-                        ss = t % (1000*60) / 100 % 60 ;
-                        ms = t %100;
-
-                        try {
-                            Thread.sleep(10);
-
-                            w1.setText(String.format("%02d", mm));
-                            w2.setText(String.format("%02d", ss));
-                            w3.setText(String.format("%02d", ms));
-
-                            t++;
-
-                        }catch (InterruptedException e1) {
-                            throw new RuntimeException(e1);
-                        }
-                    }
-                }
-            });
-
-
-            p_display.start();
-
-        }
-    }
 
 
 

@@ -5,9 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class MainFrame extends JFrame{
-    Image YTB;
-    Image LSJ;
-    Image PJH;
+    Image YTB,LSJ,PJH;
     
     // 생성자
     MainFrame(){
@@ -41,7 +39,7 @@ public class MainFrame extends JFrame{
         StartBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new GameFrame();
+                new StopWatchEx();
             }
         });
 
