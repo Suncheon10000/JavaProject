@@ -1,6 +1,8 @@
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import java.util.Random;
+
 import static javax.swing.text.StyleConstants.setIcon;
 
 public class Poop extends JLabel{
@@ -14,8 +16,8 @@ public class Poop extends JLabel{
     private ImageIcon inGameYTB,inGameLSJ,inGamePJH;
     static int count = 1;
     static int plus = 20;
-    int rand  = (int)((Math.random()*10000%3))+1;
-
+    int rand  = (int)((Math.random()*3))+1;
+    int xRand = (int)((Math.random()*1600))+1;
 
 
     public Poop() {
@@ -23,6 +25,7 @@ public class Poop extends JLabel{
         initSetting();
         plus+=20;
         System.out.println(rand);
+        System.out.println(xRand);
     }
 
     private void initObject() {
@@ -37,7 +40,7 @@ public class Poop extends JLabel{
             //if(count==1){
             setIcon(inGameYTB);
             setSize(140, 150);
-            setLocation(200,50+plus);
+            setLocation(xRand,50);
             System.out.println("YTB");
             //count++;
             //}
@@ -47,7 +50,7 @@ public class Poop extends JLabel{
             //else if(count==2){
             setIcon(inGameLSJ);
             setSize(300, 150);
-            setLocation(700,50+plus);
+            setLocation(xRand,50);
             System.out.println("LSJ");
             //count++;
             //
@@ -57,7 +60,7 @@ public class Poop extends JLabel{
             //else if(count==3){
             setIcon(inGamePJH);
             setSize(140, 150);
-            setLocation(1200,50+plus);
+            setLocation(xRand,50);
             System.out.println("PJH");
             //count=1;
             //}

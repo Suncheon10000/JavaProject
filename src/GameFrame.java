@@ -1,10 +1,10 @@
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 import javax.swing.*;
+
+import static javax.swing.text.StyleConstants.setIcon;
 
 public class GameFrame extends JFrame{
 
@@ -13,12 +13,11 @@ public class GameFrame extends JFrame{
     JLabel w1, w2, w3;
     int mm, ss, ms, t=0;
 
-    private ImageIcon inGameYTB;
-    private ImageIcon inGameLSJ;
-    private ImageIcon inGamePJH;
+    private ImageIcon inGameYTB,inGameLSJ,inGamePJH;
 
     private JLabel backgroundMap;
     private Player player;
+    private Poop poop;
 
     public GameFrame() {
         super("금쪽이 피하기");
@@ -39,8 +38,6 @@ public class GameFrame extends JFrame{
         initObject();
         initSetting();
         initListener();
-        drop();
-
 
 
         // GameStart버튼을 누르면 자동으로 스톱워치 시작
@@ -115,10 +112,46 @@ public class GameFrame extends JFrame{
         //setContentPane(backgroundMap);
         player = new Player();
         add(player);
-        inGameYTB = new ImageIcon("img/inGameYTB.png");
-        inGameLSJ = new ImageIcon("img/inGameLSJ.png");
-        inGamePJH = new ImageIcon("img/inGamePJH.png");
+        poop = new Poop();
+        add(poop);
         setVisible(true);
+        poop = new Poop();
+        add(poop);
+        poop = new Poop();
+        add(poop);
+        poop = new Poop();
+        add(poop);
+        setVisible(true);
+        poop = new Poop();
+        add(poop);
+        poop = new Poop();
+        add(poop);
+        poop = new Poop();
+        add(poop);
+        setVisible(true);
+        poop = new Poop();
+        add(poop);
+        poop = new Poop();
+        add(poop);
+        poop = new Poop();
+        add(poop);
+        setVisible(true);
+        poop = new Poop();
+        add(poop);
+        poop = new Poop();
+        add(poop);
+        poop = new Poop();
+        add(poop);
+        setVisible(true);
+        poop = new Poop();
+        add(poop);
+        poop = new Poop();
+        add(poop);
+        System.out.println("hello-world-pewo");
+
+
+
+
     }
 
     private void initSetting() {
@@ -126,7 +159,6 @@ public class GameFrame extends JFrame{
         setLayout(null);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 
     }
 
@@ -149,9 +181,5 @@ public class GameFrame extends JFrame{
     }
 
 
-    // 똥 떨이지는 코드
-    private void drop(){
-
-    }
 
 }
