@@ -29,7 +29,7 @@ public class GameFrame extends JFrame{
         this.setResizable(false);
         setLocationRelativeTo(null);
         this.pack();
-        setSize(1600,900);
+        setSize(1600,1000);
         setLocationRelativeTo(null);
         setLayout(null);
         setVisible(true);
@@ -38,7 +38,6 @@ public class GameFrame extends JFrame{
         initObject();
         initSetting();
         initListener();
-
 
         // GameStart버튼을 누르면 자동으로 스톱워치 시작
         p_display = new Thread(new Runnable() {
@@ -118,46 +117,58 @@ public class GameFrame extends JFrame{
         // 똥 == 윤태빈,이승제,박주홍 얼굴들을 랜덤으로 생성
         // 반복문을 어떻게 해야할 지 몰라서 일단 노가다로 하나씩 다 만들었습니다
         poop = new Poop();
+        poop.drop();
         add(poop);
-        setVisible(true);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         poop = new Poop();
-        add(poop);
-        poop = new Poop();
-        add(poop);
-        poop = new Poop();
-        add(poop);
-        setVisible(true);
-        poop = new Poop();
-        add(poop);
-        poop = new Poop();
+        poop.drop();
         add(poop);
         poop = new Poop();
-        add(poop);
-        setVisible(true);
-        poop = new Poop();
+        poop.drop();
         add(poop);
         poop = new Poop();
+        poop.drop();
         add(poop);
         poop = new Poop();
-        add(poop);
-        setVisible(true);
-        poop = new Poop();
+        poop.drop();
         add(poop);
         poop = new Poop();
+        poop.drop();
         add(poop);
         poop = new Poop();
-        add(poop);
-        setVisible(true);
-        poop = new Poop();
+        poop.drop();
         add(poop);
         poop = new Poop();
+        poop.drop();
+        add(poop);
+        poop = new Poop();
+        poop.drop();
+        add(poop);
+        poop = new Poop();
+        poop.drop();
+        add(poop);
+        poop = new Poop();
+        poop.drop();
+        add(poop);
+        poop = new Poop();
+        poop.drop();
+        add(poop);
+        poop = new Poop();
+        poop.drop();
+        add(poop);
+        poop = new Poop();
+        poop.drop();
+        add(poop);
+        poop = new Poop();
+        poop.drop();
         add(poop);
 
         // 이건 테스트용
         System.out.println("hello-world-pewo");
-
-
-
 
     }
 
@@ -186,7 +197,7 @@ public class GameFrame extends JFrame{
             }
         });
     }
-       // 채종인 머지 받아
+
 
 
 

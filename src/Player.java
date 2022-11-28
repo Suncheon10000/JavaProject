@@ -26,8 +26,9 @@ public class Player extends JLabel{
     private void initSetting() {
 
         setIcon(character);
-        setSize(140, 150);
+        setSize(140, 140);
         setLocation(x,y);
+
     }
     public void left() {
         System.out.println("left");
@@ -45,7 +46,6 @@ public class Player extends JLabel{
                 }
             }
         }).start();
-
     }
 
 

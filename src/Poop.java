@@ -7,6 +7,7 @@ import static javax.swing.text.StyleConstants.setIcon;
 
 public class Poop extends JLabel{
 
+    private static final int JUMPSPEED = 1;
     // 윤태빈,박주홍,이승제 얼굴 이미지
     private ImageIcon inGameYTB,inGameLSJ,inGamePJH;
 
@@ -15,7 +16,10 @@ public class Poop extends JLabel{
     // if rand == 2  -> 이승제
     // if rand == 3  -> 박주홍
     int rand  = (int)((Math.random()*3))+1;
+    Boolean GameStatus = true;
+    private int y;
 
+    private boolean down;
 
     // 똥들의 x좌표에 대한 랜드함수
     int xRand = (int)((Math.random()*1600))+1;
@@ -59,7 +63,7 @@ public class Poop extends JLabel{
 
             //else if(count==2){
             setIcon(inGameLSJ);
-            setSize(300, 150);
+            setSize(140, 150);
             setLocation(xRand,50);
             System.out.println("LSJ");
             //count++;
@@ -82,5 +86,21 @@ public class Poop extends JLabel{
     // 3. 캐릭터에 닿으면 게임 종료
     // 솔직히 1만 해결하면 2,3은 가볍게 가능
     // 채종인 화이팅
+    public void drop() {
+        //System.out.println("down");
+        down = true;
+        new Thread(()->{
+            while(down) {
+                y = y + JUMPSPEED;
+                setLocation(xRand, y);
+                try {
+                    Thread.sleep(3);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            down = false;
+        }).start();
+    }
 
 }
