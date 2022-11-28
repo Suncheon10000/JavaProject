@@ -110,8 +110,13 @@ public class GameFrame extends JFrame{
     private void initObject() {
         //backgroundMap = new JLabel(new ImageIcon("img/img.png"));
         //setContentPane(backgroundMap);
+
+        // 박주홍 머리 있는거 방향키로 이동하는 캐릭터
         player = new Player();
         add(player);
+
+        // 똥 == 윤태빈,이승제,박주홍 얼굴들을 랜덤으로 생성
+        // 반복문을 어떻게 해야할 지 몰라서 일단 노가다로 하나씩 다 만들었습니다
         poop = new Poop();
         add(poop);
         setVisible(true);
@@ -147,6 +152,8 @@ public class GameFrame extends JFrame{
         add(poop);
         poop = new Poop();
         add(poop);
+
+        // 이건 테스트용
         System.out.println("hello-world-pewo");
 
 
