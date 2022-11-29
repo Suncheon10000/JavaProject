@@ -116,26 +116,20 @@ public class GameFrame extends JFrame{
 
         // 똥 == 윤태빈,이승제,박주홍 얼굴들을 랜덤으로 생성
         // 반복문을 어떻게 해야할 지 몰라서 일단 노가다로 하나씩 다 만들었습니다
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
+        new Thread(()-> {
+            while(true) {
+                poop = new Poop();
+                poop.drop();
+                add(poop);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+        }).start();
+        /*
         poop = new Poop();
         poop.drop();
         add(poop);
@@ -166,10 +160,19 @@ public class GameFrame extends JFrame{
         poop = new Poop();
         poop.drop();
         add(poop);
+        poop = new Poop();
+        poop.drop();
+        add(poop);
+        poop = new Poop();
+        poop.drop();
+        add(poop);
+        poop = new Poop();
+        poop.drop();
+        add(poop);
+
+         */
 
         // 이건 테스트용
-        System.out.println("hello-world-pewo");
-
     }
 
     private void initSetting() {

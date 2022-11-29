@@ -1,13 +1,9 @@
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import java.util.Random;
-
-import static javax.swing.text.StyleConstants.setIcon;
-
 public class Poop extends JLabel{
 
-    private static final int JUMPSPEED = 1;
+    private static int SPEED = 1;
     // 윤태빈,박주홍,이승제 얼굴 이미지
     private ImageIcon inGameYTB,inGameLSJ,inGamePJH;
 
@@ -30,8 +26,11 @@ public class Poop extends JLabel{
     public Poop() {
         // 이미지 생성을 위한 함수 호출
         initObject();
+        SPEED +=0.3;
+
         // 이미지를 랜덤으로 세팅하는 함수 호출
         initSetting();
+
 
         // 테스틍용
         System.out.println(rand);
@@ -74,7 +73,7 @@ public class Poop extends JLabel{
             //else if(count==3){
             setIcon(inGamePJH);
             setSize(140, 150);
-            setLocation(xRand,50);
+            setLocation(xRand,10);
             System.out.println("PJH");
             //count=1;
             //}
@@ -91,7 +90,7 @@ public class Poop extends JLabel{
         down = true;
         new Thread(()->{
             while(down) {
-                y = y + JUMPSPEED;
+                y = y + SPEED;
                 setLocation(xRand, y);
                 try {
                     Thread.sleep(3);
