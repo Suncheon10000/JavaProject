@@ -10,12 +10,14 @@ public class GameFrame extends JFrame{
 
     JButton start;
     Thread p_display;
+    static int count = 0;
     JLabel w1, w2, w3;
     int mm, ss, ms, t=0;
 
     private ImageIcon inGameYTB,inGameLSJ,inGamePJH;
 
     private JLabel backgroundMap;
+    Boolean GameStatus = true;
     private Player player;
     private Poop poop;
 
@@ -117,12 +119,17 @@ public class GameFrame extends JFrame{
         // 똥 == 윤태빈,이승제,박주홍 얼굴들을 랜덤으로 생성
         // 반복문을 어떻게 해야할 지 몰라서 일단 노가다로 하나씩 다 만들었습니다
         new Thread(()-> {
-            while(true) {
+            while(GameStatus) {
                 poop = new Poop();
                 poop.drop();
                 add(poop);
                 try {
-                    Thread.sleep(500);
+                    Thread.sleep(400-count);
+                    if(count==100){
+                        count=101;
+                    }else{
+                    count+=1;
+                    }
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }

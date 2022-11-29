@@ -26,7 +26,7 @@ public class Poop extends JLabel{
     public Poop() {
         // 이미지 생성을 위한 함수 호출
         initObject();
-        SPEED +=0.3;
+        SPEED +=0.5;
 
         // 이미지를 랜덤으로 세팅하는 함수 호출
         initSetting();
@@ -53,7 +53,7 @@ public class Poop extends JLabel{
             //if(count==1){
             setIcon(inGameYTB);
             setSize(140, 150);
-            setLocation(xRand,50);
+            setLocation(xRand,0);
             System.out.println("YTB");
             //count++;
             //}
@@ -63,7 +63,7 @@ public class Poop extends JLabel{
             //else if(count==2){
             setIcon(inGameLSJ);
             setSize(140, 150);
-            setLocation(xRand,50);
+            setLocation(xRand,0);
             System.out.println("LSJ");
             //count++;
             //
@@ -73,7 +73,7 @@ public class Poop extends JLabel{
             //else if(count==3){
             setIcon(inGamePJH);
             setSize(140, 150);
-            setLocation(xRand,10);
+            setLocation(xRand,0);
             System.out.println("PJH");
             //count=1;
             //}
@@ -87,10 +87,10 @@ public class Poop extends JLabel{
     // 채종인 화이팅
     public void drop() {
         //System.out.println("down");
-        down = true;
         new Thread(()->{
-            while(down) {
+            while(GameStatus) {
                 y = y + SPEED;
+
                 setLocation(xRand, y);
                 try {
                     Thread.sleep(3);
@@ -99,7 +99,7 @@ public class Poop extends JLabel{
                 }
             }
             down = false;
+
         }).start();
     }
-
 }
