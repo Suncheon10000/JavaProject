@@ -106,7 +106,7 @@ public class Poop extends JLabel{
     }
     public void hit(){
         if(xRand == player.Playerx && y == player.Playerx){
-
+            System.out.println("game over");
         }
     }
 }
