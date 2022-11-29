@@ -13,12 +13,12 @@ public class GameFrame extends JFrame{
     static int count = 0;
     JLabel w1, w2, w3;
     int mm, ss, ms, t=0;
+    private Player player;
 
     private ImageIcon inGameYTB,inGameLSJ,inGamePJH;
 
     private JLabel backgroundMap;
     Boolean GameStatus = true;
-    private Player player;
     private Poop poop;
 
     public GameFrame() {
@@ -31,7 +31,7 @@ public class GameFrame extends JFrame{
         this.setResizable(false);
         setLocationRelativeTo(null);
         this.pack();
-        setSize(1600,1000);
+        setSize(1600,900);
         setLocationRelativeTo(null);
         setLayout(null);
         setVisible(true);
@@ -109,8 +109,6 @@ public class GameFrame extends JFrame{
 
     }
     private void initObject() {
-        //backgroundMap = new JLabel(new ImageIcon("img/img.png"));
-        //setContentPane(backgroundMap);
 
         // 박주홍 머리 있는거 방향키로 이동하는 캐릭터
         player = new Player();
@@ -127,8 +125,8 @@ public class GameFrame extends JFrame{
                     Thread.sleep(400-count);
                     if(count==100){
                         count=101;
-                    }else{
-                    count+=1;
+                    }else if (count<100){
+                    count+=2;
                     }
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
@@ -136,48 +134,6 @@ public class GameFrame extends JFrame{
 
             }
         }).start();
-        /*
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-        poop = new Poop();
-        poop.drop();
-        add(poop);
-
-         */
 
         // 이건 테스트용
     }

@@ -16,6 +16,7 @@ public class Poop extends JLabel{
     private int y;
 
     private boolean down;
+    private Player player;
 
     // 똥들의 x좌표에 대한 랜드함수
     int xRand = (int)((Math.random()*1600))+1;
@@ -97,8 +98,8 @@ public class Poop extends JLabel{
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
             }
-            down = false;
 
         }).start();
     }

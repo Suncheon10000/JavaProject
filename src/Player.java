@@ -8,12 +8,11 @@ import static javax.swing.text.StyleConstants.setIcon;
 public class Player extends JLabel{
 
     private int x=720;
-    private int y=740;
+    private int y=720;
 
     // 플레이어의 위치
     private int Playerx;
     private int Playery;
-    private Player player;
     private Poop poop;
 
 
@@ -35,13 +34,13 @@ public class Player extends JLabel{
     private void initSetting() {
 
         setIcon(character);
-        setSize(130, 120);
+        setSize(130, 150);
         setLocation(x,y);
-        /*
-        Playerx = player.getX();
-        Playery = player.getY();
 
-         */
+        Playerx = getX();
+        Playery = getY();
+
+
 
     }
     public void left() {
@@ -58,12 +57,7 @@ public class Player extends JLabel{
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                /*
-                if((Math.abs(x - poop.getX()) < 10 ) &&
-                        Math.abs(y - poop.getY()) > 0 && Math.abs(y - poop.getY()) < 50 ) {
-                    System.out.println("물방울이 적군과 충돌하였습니다.");
-                }
-                 */
+
             }
         }).start();
     }
