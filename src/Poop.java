@@ -13,6 +13,7 @@ public class Poop extends JLabel{
     // if rand == 3  -> 박주홍
     int rand  = (int)((Math.random()*3))+1;
     Boolean GameStatus = true;
+    Poop poop;
     private int y;
 
     private boolean down;
@@ -102,5 +103,10 @@ public class Poop extends JLabel{
             }
 
         }).start();
+    }
+    public void hit(){
+        if(xRand == player.Playerx && y == player.Playerx){
+
+        }
     }
 }

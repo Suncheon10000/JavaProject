@@ -11,8 +11,8 @@ public class Player extends JLabel{
     private int y=720;
 
     // 플레이어의 위치
-    private int Playerx;
-    private int Playery;
+    int Playerx;
+    int Playery;
     private Poop poop;
 
 
@@ -82,4 +82,5 @@ public class Player extends JLabel{
 
 
     }
+
 }
